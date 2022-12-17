@@ -1,11 +1,10 @@
 import subprocess
 from typing import Optional, Union, List
-from _typeshed import StrOrBytesPath
 
 def command(
     command: Union[str, List[str]],
     final_line: Optional[str]=None,
-    cwd: Optional[StrOrBytesPath]=None,
+    cwd: Optional[str]=None,
     return_output: bool=False
 ) -> List[bytes]:
     command = command.split() if isinstance(command, str) else command
