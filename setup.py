@@ -1,14 +1,14 @@
 from distutils.core import setup
 
 setup(
-  name = 'pyscreen',
-  packages = ['pyscreen'],
-  version = '0.3',
-  description = 'A light-weight library for easy interaction between Python and GNU screen.',
-  author = 'Wessel Stoop',
-  author_email = 'stoopwessel@gmail.com',
-  url = 'https://github.com/woseseltops/pyscreen',
-  download_url = 'https://github.com/woseseltops/pyscreen/tarball/0.3',
-  keywords = ['GNU screen', 'screen'],
-  classifiers = [],
+	name='screens.py',
+	packages=['screens'],
+	version='0.4.0',
+	description='A light-weight library for easy interaction between Python and GNU screen.',
+	long_description=open("README.md", errors="ignore").read(),
+	long_description_content_type="text/markdown",
+	author='Romanin',
+	author_email='semina054@gmail.com',
+	url='https://github.com/romanin-rf/pyscreen',
+	keywords=['GNU screen', 'screens']
 )
