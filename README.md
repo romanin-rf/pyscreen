@@ -11,11 +11,11 @@ session = screens.Session('myName')
 session.send_command('echo hello')
 
 # Kill a screen session with a particular name
-session = screens.get_session_with_name('testSession')
+session = screens.get_session_by_name('testSession')
 session.kill()
 
 # Print all the id of all sessions
-for session in screens.get_all_sessions():
+for session in screens.get_sessions():
     print(session.id)
 ```
 ## Installation
