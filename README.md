@@ -11,7 +11,7 @@ session = screens.Session('myName')
 session.send_command('echo hello')
 
 # Kill a screen session with a particular name
-session = screens.get_session_by_name('testSession')
+session = screens.get_session_by_name('myName')
 session.kill()
 
 # Print all the id of all sessions
