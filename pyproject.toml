@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "screens.py"
+version = "0.5.0"
+description = "A light-weight library for easy interaction between Python and GNU screen."
+authors = ["Romani <semina054@gmail.com>"]
+license = "GNU GENERAL PUBLIC"
+readme = "README.md"
+packages = [{include = "screens"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+psutil = "^5.9.5"
+vbml = "^1.1.post1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

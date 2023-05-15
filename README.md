@@ -7,7 +7,7 @@ This library allows you create, find and kill screen sessions programmatically f
 import screens
 
 # Start a new session and give it something to do    
-session = screens.ScreenSession('myName')
+session = screens.Session('myName')
 session.send_command('echo hello')
 
 # Kill a screen session with a particular name
