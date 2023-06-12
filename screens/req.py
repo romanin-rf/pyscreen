@@ -3,7 +3,7 @@ from vbml import Pattern, Patcher
 from typing import Optional, List, Dict, Any
 
 def command(*args: str) -> List[str]:
-    return subprocess.check_output(list(args)).decode(errors="ignore").replace("\r", "").split("\n")
+    return subprocess.getstatusoutput(list(args))[1].replace("\r", "").split("\n")
 
 def screen(*args: str) -> List[str]:
     return command("screen", *args)
