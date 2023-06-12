@@ -7,23 +7,26 @@ from .req import screen, check_pattern
 from .exceptions import CreateScreenError
 
 class Screen:
-    def __init__(self, name: str, **kwargs) -> None:
+    def __init__(self, name: str, *args, **kwargs) -> None:
         self.name = name
-        self.id = kwargs.get("id", None)
+        self.id: Optional[int] = kwargs.get("id", None)
         
         if self.id is None:
             if (s:=get_session_by_name(self.name)) is not None:
                 self.id: int = s.id
             else:
                 try:
-                    screen("-d", "-m", "-S", f"{name}")
+                    screen("-dmS", f"\"{name}\"")
                     s: Screen = get_session_by_name(self.name)
                     self.id: int = s.id
                 except:
                     raise CreateScreenError()
     
-    def __str__(self) -> str: return f'ScreenSession(name={self.name.__repr__()}, id={self.id.__repr__()})'
-    def __repr__(self) -> str: return self.__str__()
+    def __str__(self) -> str:
+        return f'ScreenSession(name={repr(self.name)}, id={repr(self.id)})'
+    
+    def __repr__(self) -> str:
+        return self.__str__()
     
     def kill(self) -> None:
         if self.id is not None:
@@ -33,7 +36,7 @@ class Screen:
     
     def send_command(self, c: str) -> None:
         if self.id is not None:
-            screen("-r", self.name, "-X", "stuff", f"{c} \r")
+            screen("-r", f"\"{self.name}\"", "-X", "stuff", f"\"{c}\r\"")
 
 # ! Other
 def wipe() -> None: screen("-wipe")

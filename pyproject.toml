@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "screens.py"
-version = "0.5.0.post1"
+version = "0.5.0.post2"
 description = "A light-weight library for easy interaction between Python and GNU screen."
 authors = ["Romani <semina054@gmail.com>"]
 license = "GNU GENERAL PUBLIC"
